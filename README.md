@@ -10,5 +10,5 @@ where otherwise noted.
 
 # Index
 
-- [Philosophies](Philosophies.md)
+- [Philosophies](PHILOSOPHIES.md)
 - [PHP Code Standards](PHP.md)
