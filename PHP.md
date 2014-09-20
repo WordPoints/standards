@@ -18,5 +18,5 @@ The comment MUST have an empty newline above and below it. It MUST be exactly of
 form above, with no ending period.
 
 There is one exception to this rule: if the file ends in HTML mode (i.e., the last
-PHP tag was closed), it SHOULD NOT enter PHP mode so that the EOF comment can be
-supplied.
+PHP tag was closed and was followed by HTML/text), it SHOULD NOT enter PHP mode so 
+that the EOF comment can be supplied.
