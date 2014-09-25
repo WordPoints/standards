@@ -34,3 +34,23 @@ This makes the meaning unambigous to the parser and to humans too. And while you
 SHOULD NOT use [reserved words](https://dev.mysql.com/doc/mysqld-version-reference/en/mysqld-version-reference-reservedwords-5-5.html) 
 as identifiers, by using backticks you are safe if your column names ever become 
 reserved words in the future.
+
+## Global Variables
+
+Your code MUST NOT declare new `global` variables. If you are thinking of introducing
+a new global, refactor your code instead.
+
+### Using Global Variables
+
+Of course, WordPress uses some global variables, like `$wpdb`, and it's fine for you
+to _use_ globals provided by WordPress/other plugins/etc. Just don't create any new
+ones.
+
+When using a global variable, you MUST declare it `global` in the current
+scope, even if you think that you are currently in the global scope. For example,
+if you use `$wpdb` in a file's main scope, you MUST add this at the top of the file
+(or anywhere before using the variable):
+
+```php
+global $wpdb;
+```
