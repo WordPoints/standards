@@ -43,8 +43,8 @@ a new global, refactor your code instead.
 ### Using Global Variables
 
 Of course, WordPress uses some global variables, like `$wpdb`, and it's fine for you
-to _use_ globals provided by WordPress/other plugins/etc. Just don't create any new
-ones.
+to _use_ globals provided by WordPress/other plugins/etc. when necessary. Just don't 
+create any new ones.
 
 When using a global variable, you MUST declare it `global` in the current
 scope, even if you think that you are currently in the global scope. For example,
