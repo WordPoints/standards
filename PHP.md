@@ -54,3 +54,35 @@ if you use `$wpdb` in a file's main scope, you MUST add this at the top of the f
 ```php
 global $wpdb;
 ```
+
+## Property Access via Magic Methods
+
+Your code SHOULD NOT use the following magic methods to grant "public" access to protected or private class properties: `__get()`, `__set()`, `__isset()`, `__unset()`.
+
+These methods [increase memory consumption](https://gist.github.com/nikic/5015323) for your object, and add the overhead of a method call without making this obvious to the developer. Think of these as "deceptive", rather than "magic", methods. They can easily trick the developer into thinking that it is OK to do this:
+
+```php
+$obj->magic->method();
+$obj->magic->another_method();
+```
+
+In reality, the above code is calling `__get()` twice, to retreive the magic property each time. If this property wasn't magic, the overhead of accessing it twice woudl be negligable. Because accessing it is actually a method call under the hood, what is really happening is this:
+
+```php
+$obj->magic()->method();
+$obj->magic()->another_method();
+```
+
+Which obviously needs to be refactored to this:
+
+```php
+$magic = $obj->magic();
+$magic->method();
+$magic->another_method();
+```
+
+But this isn't obvious to the developer when this behaviour is being hidden behind the magic of the `__get()` method.
+
+These methods can also have other limitations that can lead to unexpected issues in certain cituations. For example, it is not possible to call them recursively.
+
+The only places in your code where you should use these methods is where it is absolutely necessary for compatibility (either with older code or a library that is outside of your control).
