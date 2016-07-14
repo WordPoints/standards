@@ -86,3 +86,7 @@ But this isn't obvious to the developer when this behaviour is being hidden behi
 These methods can also have other limitations that can lead to unexpected issues in certain cituations. For example, it is not possible to call them recursively.
 
 The only places in your code where you should use these methods is where it is absolutely necessary for compatibility (either with older code or a library that is outside of your control).
+
+## Slashing
+
+Functions and methods MUST NOT expect data passed to them to be slashed ("magic quoted"). This tends to bubble up to higher-level functions, where the behavior is likely to be undocumented and unexpected, since it is hidden behind the function used by the function used by the function. *Nightmares*. You get the idea.
