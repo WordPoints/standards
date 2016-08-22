@@ -1,7 +1,7 @@
-WordPoints Coding Standards
+WordPoints Standards
 =========
 
-Coding standards and philosophies of the WordPoints projects.
+Coding standards, philosophies, and policies of the WordPoints projects.
 
 ---
 
@@ -10,5 +10,6 @@ where otherwise noted.
 
 # Index
 
+- [Policies](POLICIES.md)
 - [Philosophies](PHILOSOPHIES.md)
 - [PHP Code Standards](PHP.md)
