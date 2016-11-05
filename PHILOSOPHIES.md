@@ -16,4 +16,4 @@ actively maintained with security updates (e.g., WordPress 3.6).
 ## Escaping
 
 Everything must be escaped immediately before output/use. Period. [A great read on this
-topic](http://vip.wordpress.com/2014/06/20/the-importance-of-escaping-all-the-things/).
+topic](https://vip.wordpress.com/2014/06/20/the-importance-of-escaping-all-the-things/).
