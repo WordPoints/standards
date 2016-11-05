@@ -3,7 +3,7 @@
 This document outlines the PHP coding standards used by the WordPoints projects.
 
 It is recommended that you understand the [WordPress PHP coding
-standards](http://make.wordpress.org/core/handbook/coding-standards/php/), as
+standards](https://make.wordpress.org/core/handbook/coding-standards/php/), as
 WordPoints follows these except as noted below.
 
 ## End Of File Comments
